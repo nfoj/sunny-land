@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://u6if4xtghyg0"]
+
+[ext_resource type="Texture2D" uid="uid://c7qwk1plk6d1i" path="res://assets/spritesheets/enemies/block.png" id="1_qgde8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_43tpo"]
+size = Vector2(32, 32)
+
+[node name="bull" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 16)
+scale = Vector2(2, 2)
+texture = ExtResource("1_qgde8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_43tpo")

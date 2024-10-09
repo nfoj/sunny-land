@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://d00ix7lmh4j67"]
+
+[ext_resource type="Texture2D" uid="uid://dwqycaen4c14i" path="res://assets/spritesheets/enemies/piranha-plant.png" id="1_anfdo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ag3h"]
+atlas = ExtResource("1_anfdo")
+region = Rect2(0, 0, 61, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yiwwh"]
+atlas = ExtResource("1_anfdo")
+region = Rect2(61, 0, 61, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cq23u"]
+atlas = ExtResource("1_anfdo")
+region = Rect2(122, 0, 61, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mku8i"]
+atlas = ExtResource("1_anfdo")
+region = Rect2(183, 0, 61, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icvyq"]
+atlas = ExtResource("1_anfdo")
+region = Rect2(244, 0, 61, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_asfav"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ag3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yiwwh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cq23u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mku8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icvyq")
+}],
+"loop": true,
+"name": &"ani_plant",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0brc6"]
+height = 31.2
+
+[node name="plant" type="Area2D"]
+position = Vector2(2, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_asfav")
+animation = &"ani_plant"
+autoplay = "ani_plant"
+frame_progress = 0.186287
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 16)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("CapsuleShape2D_0brc6")

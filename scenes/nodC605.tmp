@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdpbbtd26ovlb"]
+
+[ext_resource type="PackedScene" uid="uid://ca5jcdtvb4thi" path="res://scenes/parallax_background.tscn" id="1_6efeh"]
+[ext_resource type="Script" path="res://scenes/node.gd" id="1_otxjq"]
+[ext_resource type="PackedScene" uid="uid://cxe13y3xms14p" path="res://scenes/static_body_2d.tscn" id="2_umv56"]
+[ext_resource type="PackedScene" uid="uid://kq1ele8y7gl6" path="res://scenes/character_body_2d.tscn" id="3_1sb82"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_otxjq")
+
+[node name="parallax_background" parent="." instance=ExtResource("1_6efeh")]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_umv56")]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_1sb82")]
+position = Vector2(120, 370)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 270)

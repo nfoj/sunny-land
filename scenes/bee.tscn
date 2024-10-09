@@ -1,0 +1,89 @@
+[gd_scene load_steps=13 format=3 uid="uid://b4uj5dhpdrgt3"]
+
+[ext_resource type="Texture2D" uid="uid://gap3ux7cr6dd" path="res://assets/spritesheets/enemies/bee.png" id="1_8c8ux"]
+[ext_resource type="Script" path="res://scenes/bee.gd" id="1_tc5li"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7alm"]
+atlas = ExtResource("1_8c8ux")
+region = Rect2(0, 0, 37, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ll5o3"]
+atlas = ExtResource("1_8c8ux")
+region = Rect2(37, 0, 37, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rdv6"]
+atlas = ExtResource("1_8c8ux")
+region = Rect2(74, 0, 37, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4s7rf"]
+atlas = ExtResource("1_8c8ux")
+region = Rect2(111, 0, 37, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlu5g"]
+atlas = ExtResource("1_8c8ux")
+region = Rect2(148, 0, 37, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skfcb"]
+atlas = ExtResource("1_8c8ux")
+region = Rect2(185, 0, 37, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60r1t"]
+atlas = ExtResource("1_8c8ux")
+region = Rect2(222, 0, 37, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtau6"]
+atlas = ExtResource("1_8c8ux")
+region = Rect2(259, 0, 37, 39)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b52d1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7alm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ll5o3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rdv6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4s7rf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlu5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skfcb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60r1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtau6")
+}],
+"loop": true,
+"name": &"ani_bee",
+"speed": 11.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ci3y2"]
+radius = 12.0
+
+[node name="bee" type="Area2D"]
+script = ExtResource("1_tc5li")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-25, -34)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_b52d1")
+animation = &"ani_bee"
+autoplay = "ani_bee"
+frame_progress = 0.932004
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(18, 21)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("CircleShape2D_ci3y2")

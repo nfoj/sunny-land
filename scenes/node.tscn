@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdpbbtd26ovlb"]
+
+[ext_resource type="PackedScene" uid="uid://ca5jcdtvb4thi" path="res://scenes/parallax_background.tscn" id="1_6efeh"]
+[ext_resource type="Script" path="res://scenes/node.gd" id="1_otxjq"]
+[ext_resource type="PackedScene" uid="uid://cxe13y3xms14p" path="res://scenes/Ground.tscn" id="2_umv56"]
+[ext_resource type="PackedScene" uid="uid://kq1ele8y7gl6" path="res://scenes/character_body_2d.tscn" id="3_1sb82"]
+[ext_resource type="PackedScene" uid="uid://bruw32p5tf0k6" path="res://scenes/canvas_layer.tscn" id="5_25igx"]
+[ext_resource type="PackedScene" uid="uid://ci1p6i776t70j" path="res://scenes/restart.tscn" id="6_us715"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_otxjq")
+
+[node name="parallax_background" parent="." instance=ExtResource("1_6efeh")]
+
+[node name="Ground" parent="." instance=ExtResource("2_umv56")]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_1sb82")]
+position = Vector2(120, 370)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 270)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("5_25igx")]
+
+[node name="Restart" parent="." instance=ExtResource("6_us715")]
+process_mode = 2
